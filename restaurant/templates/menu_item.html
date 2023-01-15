@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <article>
+        <h1>Menu item</h1>
+        <span>
+            <a href="{% url 'home' %}">Home</a> /
+            <a href="{% url 'menu' %}">Menu</a>/
+            <!-- Step: Replace code here -->
+        </span>
+        <!--Begin row-->
+        <div class="row">
+            <!--Begin col-->
+            <div class="column">
+                <h2>
+                    <!-- Step: Replace code here -->
+                    {{ menu_item.name }}
+                </h2>
+                <p>
+                    <!-- Step: Replace code here -->
+                    ${{ menu_item.price }}.00
+                </p>
+                <p>
+                    <!-- Step: Replace code here -->
+                    {{ menu_item.description }}
+                </p>
+            </div>
+            <!--End col-->
+            <!--Begin col-->
+            <div class="column">
+                <img src="{% static 'img/menu_items/' %}{{menu_item.name}}.jpg" alt="{{ menu_item.name}}" />
+            </div>
+            <!--End col-->
+        </div>
+        <!--End row-->
+    </article>
+</section>
+{% endblock %}
